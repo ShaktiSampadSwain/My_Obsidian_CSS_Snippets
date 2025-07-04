@@ -3,6 +3,7 @@
 This CSS snippet for Obsidian enhances the visual appeal and user experience of your file explorer by adding vibrant, animated gradient backgrounds to folders, subtle hover effects, clear bold text for folder names, and distinct highlighting for files.
 
 ![darkmode](https://github.com/ShaktiSampadSwain/RainbowFolderObsidian/blob/main/rainbowfolderDark.png)
+![lightmode](https://github.com/ShaktiSampadSwain/RainbowFolderObsidian/blob/main/rainbowfolderLight.png)
 ## ✨ Features
 
 - **Animated Gradient Folder Backgrounds:** Each top-level folder features a unique, slowly animating gradient background, creating a dynamic and visually engaging file explorer.
