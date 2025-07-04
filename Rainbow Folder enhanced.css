@@ -1,0 +1,144 @@
+/* Base folder style with animated gradient background */
+.nav-files-container > div > .nav-folder {
+  background: linear-gradient(90deg, var(--folder-color-light), var(--folder-color), var(--folder-color-dark));
+  background-size: 300% 300%;
+  animation: rainbow-gradient-shift 7s ease-in-out infinite;
+  --nav-item-color: black;
+  --nav-item-color-hover: black;
+  --nav-collapse-icon-color: black;
+  border-radius: 10px;
+  padding: 5px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 6px;
+  transition: all 0.2s ease-in-out;
+  filter: brightness(0.95);
+}
+
+/* Folder title bold */
+.nav-files-container > div > .nav-folder-title {
+  font-weight: bold !important ;
+  background-color: transparent !important;
+  
+}
+
+/* Hover effect */
+.nav-files-container > div > .nav-folder:hover {
+  filter: brightness(1);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+}
+
+/* Folder-specific color variables */
+.nav-files-container > div > .nav-folder:nth-child(11n + 2) {
+  --folder-color: rgb(243, 139, 168);
+  --folder-color-light: rgb(255, 180, 200);
+  --folder-color-dark: rgb(220, 100, 140);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 3) {
+  --folder-color: rgb(235, 160, 172);
+  --folder-color-light: rgb(255, 190, 200);
+  --folder-color-dark: rgb(210, 120, 140);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 4) {
+  --folder-color: rgb(250, 179, 135);
+  --folder-color-light: rgb(255, 210, 170);
+  --folder-color-dark: rgb(230, 140, 100);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 5) {
+  --folder-color: rgb(249, 226, 175);
+  --folder-color-light: rgb(255, 245, 210);
+  --folder-color-dark: rgb(220, 190, 130);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 6) {
+  --folder-color: rgb(166, 227, 161);
+  --folder-color-light: rgb(200, 250, 190);
+  --folder-color-dark: rgb(130, 190, 130);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 7) {
+  --folder-color: rgb(148, 226, 213);
+  --folder-color-light: rgb(180, 250, 240);
+  --folder-color-dark: rgb(110, 190, 180);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 8) {
+  --folder-color: rgb(137, 220, 235);
+  --folder-color-light: rgb(170, 240, 250);
+  --folder-color-dark: rgb(100, 180, 200);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 9) {
+  --folder-color: rgb(116, 199, 236);
+  --folder-color-light: rgb(150, 220, 250);
+  --folder-color-dark: rgb(80, 160, 200);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 10) {
+  --folder-color: rgb(135, 176, 249);
+  --folder-color-light: rgb(170, 200, 255);
+  --folder-color-dark: rgb(100, 140, 210);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 11) {
+  --folder-color: rgb(180, 190, 254);
+  --folder-color-light: rgb(210, 220, 255);
+  --folder-color-dark: rgb(140, 150, 220);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 12) {
+  --folder-color: rgb(203, 166, 247);
+  --folder-color-light: rgb(230, 200, 255);
+  --folder-color-dark: rgb(160, 120, 210);
+}
+
+/* Gradient animation keyframes */
+@keyframes rainbow-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Bold folder names (applies to text within any .nav-folder) */
+.nav-files-container .nav-folder-title .nav-file-title-content,
+.nav-files-container .nav-folder-title .nav-folder-title-content {
+    font-weight: 500 !important;
+    position: relative;
+    z-index: 2;
+    color: var(--nav-item-color) !important;
+    text-shadow: none !important; /* No text shadow */
+    background-color: transparent !important;
+    transition: background-color 0.1s ease;
+}
+
+/* Subfolder Title Gray Shading */
+.nav-files-container .nav-folder-children .nav-folder-title .nav-folder-title-content {
+    color: rgba(0, 0, 0, 0.8) !important;
+    text-shadow: none !important;
+}
+
+/* Ensure collapse icon is above gradient (applies to icons within any .nav-folder) */
+.nav-files-container .nav-folder-title .nav-folder-collapse-icon {
+    position: relative;
+    z-index: 2;
+    color: var(--nav-collapse-icon-color) !important;
+}
+
+/* Hover effect for ANY folder container (main or subfolder) */
+.nav-files-container .nav-folder:hover {
+    transform: translateY(-3px); /* Lifts the folder */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Pop-out shadow on hover */
+}
