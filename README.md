@@ -44,7 +44,7 @@ This CSS snippet for Obsidian enhances the visual appeal and user experience of 
 
 Your file explorer should now display the enhanced styling!
 
-## 📋 The Code
+## 📋 The Code for Animated
 
 ```css
 /* Base folder style with animated gradient background */
@@ -202,14 +202,182 @@ Your file explorer should now display the enhanced styling!
     background-color: transparent !important;
 }
 
-/* AnuPpuccin theme specific overrides (if necessary, keep these at the end) */
-/* This ensures font consistency if the theme tries to override it */
-.theme-anupucin .nav-files-container .nav-folder-title .nav-file-title-content,
-.theme-anupucin .nav-files-container .nav-folder-title .nav-folder-title-content {
-    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
-}
 ```
+## 📋 The Code for Solid Background
+```css
+/* Finalized Obsidian Folder & File Styling Snippet v8.0 */
+/* Optimized for zero background animation.
+   Folders and subfolders now have fixed gradient backgrounds.
+   Subfolders share the same background as the root folder.
+   Maintains bold text, gray subfolder titles, and refined hover/highlight behaviors. */
 
+/* --- Define Root Folder Specific Variables --- */
+/* These variables store the gradient colors for the *intended* root look. */
+.nav-files-container {
+    --root-folder-color: rgb(243, 139, 168); /* Main color for root/subfolders */
+    --root-folder-color-light: rgb(255, 180, 200); /* Light shade for root/subfolders */
+    --root-folder-color-dark: rgb(220, 100, 140); /* Dark shade for root/subfolders */
+}
+
+/* Base folder styling (applies to all .nav-folder elements) */
+.nav-files-container .nav-folder {
+    /* Fixed gradient background for all folders */
+    background: linear-gradient(90deg, var(--folder-color-light), var(--folder-color), var(--folder-color-dark));
+    /* Removed background-size and animation as they are no longer needed */
+    /* background-size: 300% 300%; */
+    /* animation: rainbow-gradient-shift 7s ease-in-out infinite; */
+
+    --nav-item-color: black;
+    --nav-item-color-hover: black;
+    --nav-collapse-icon-color: black;
+
+    position: relative; /* Keep relative for text/icon z-index */
+    border-radius: 10px;
+    padding: 5px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 6px;
+    transition: all 0.2s ease-in-out; /* Keep transition for hover effects */
+    filter: brightness(0.95); /* Keep initial brightness */
+
+    /* Removed border and box-shadow from here for a cleaner look */
+    border: none;
+    box-shadow: none;
+}
+
+/* Folder title bold */
+.nav-files-container .nav-folder-title {
+    font-weight: bold !important;
+    background-color: transparent !important;
+}
+
+/* Hover effect for ANY folder container (main or subfolder) */
+.nav-files-container .nav-folder:hover {
+    filter: brightness(1); /* Brightens on hover */
+    transform: translateY(-3px); /* Lifts the folder */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Pop-out shadow on hover */
+}
+
+/* Folder-specific color variables */
+/* These now define the FIXED gradient colors for top-level folders */
+.nav-files-container .nav-folder:nth-child(11n + 2) {
+    --folder-color: rgb(243, 139, 168);
+    --folder-color-light: rgb(255, 180, 200);
+    --folder-color-dark: rgb(220, 100, 140);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 3) {
+    --folder-color: rgb(235, 160, 172);
+    --folder-color-light: rgb(255, 190, 200);
+    --folder-color-dark: rgb(210, 120, 140);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 4) {
+    --folder-color: rgb(250, 179, 135);
+    --folder-color-light: rgb(255, 210, 170);
+    --folder-color-dark: rgb(230, 140, 100);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 5) {
+    --folder-color: rgb(249, 226, 175);
+    --folder-color-light: rgb(255, 245, 210);
+    --folder-color-dark: rgb(220, 190, 130);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 6) {
+    --folder-color: rgb(166, 227, 161);
+    --folder-color-light: rgb(200, 250, 190);
+    --folder-color-dark: rgb(130, 190, 130);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 7) {
+    --folder-color: rgb(148, 226, 213);
+    --folder-color-light: rgb(180, 250, 240);
+    --folder-color-dark: rgb(110, 190, 180);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 8) {
+    --folder-color: rgb(137, 220, 235);
+    --folder-color-light: rgb(170, 240, 250);
+    --folder-color-dark: rgb(100, 180, 200);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 9) {
+    --folder-color: rgb(116, 199, 236);
+    --folder-color-light: rgb(150, 220, 250);
+    --folder-color-dark: rgb(80, 160, 200);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 10) {
+    --folder-color: rgb(135, 176, 249);
+    --folder-color-light: rgb(170, 200, 255);
+    --folder-color-dark: rgb(100, 140, 210);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 11) {
+    --folder-color: rgb(180, 190, 254);
+    --folder-color-light: rgb(210, 220, 255);
+    --folder-color-dark: rgb(140, 150, 220);
+}
+
+.nav-files-container .nav-folder:nth-child(11n + 12) {
+    --folder-color: rgb(203, 166, 247);
+    --folder-color-light: rgb(230, 200, 255);
+    --folder-color-dark: rgb(160, 120, 210);
+}
+
+/* Removed animation keyframes as they are no longer used */
+/* @keyframes rainbow-gradient-shift { ... } */
+
+/* Bold folder names (applies to text within any .nav-folder) */
+.nav-files-container .nav-folder-title .nav-file-title-content,
+.nav-files-container .nav-folder-title .nav-folder-title-content {
+    font-weight: 500 !important;
+    position: relative;
+    z-index: 2;
+    color: var(--nav-item-color) !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    transition: background-color 0.1s ease;
+}
+
+/* Subfolder Title Gray Shading */
+.nav-files-container .nav-folder-children .nav-folder-title .nav-folder-title-content {
+    color: rgba(0, 0, 0, 0.8) !important;
+    text-shadow: none !important;
+}
+
+/* Ensure collapse icon is above gradient (applies to icons within any .nav-folder) */
+.nav-files-container .nav-folder-title .nav-folder-collapse-icon {
+    position: relative;
+    z-index: 2;
+    color: var(--nav-collapse-icon-color) !important;
+}
+
+/* --- CRITICAL FIX: Subfolders Share the Specific Root Gradient --- */
+/* This rule targets *any* subfolder and explicitly sets its background
+   to the desired "root" gradient, overriding nth-child for subfolders. */
+.nav-files-container .nav-folder-children .nav-folder {
+    background: linear-gradient(90deg, var(--root-folder-color-light), var(--root-folder-color), var(--root-folder-color-dark)) !important;
+    /* Removed animation-delay as animation is now completely gone */
+    /* animation-delay: var(--root-folder-animation-delay) !important; */
+}
+
+/* Highlight for File Names on Hover */
+.nav-files-container .nav-file:hover .nav-file-title-content {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 0 4px;
+    margin: 0 -4px;
+}
+
+/* Ensure folder names do NOT get highlighted */
+.nav-files-container .nav-folder-title:hover .nav-folder-title-content {
+    background-color: transparent !important;
+}
+
+```
 ## 💡 Code Explanation
 
 This snippet primarily targets elements within Obsidian's file explorer (`.nav-files-container`) to apply custom styling.
