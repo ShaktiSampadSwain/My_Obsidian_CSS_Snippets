@@ -1,53 +1,4 @@
-# Obsidian Enhanced Folder & File Styling Snippet
-
-This CSS snippet for Obsidian enhances the visual appeal and user experience of your file explorer by adding vibrant, animated gradient backgrounds to folders, subtle hover effects, clear bold text for folder names, and distinct highlighting for files.
-
-![darkmode](https://github.com/ShaktiSampadSwain/RainbowFolderObsidian/blob/main/rainbowfolderDark.png)
-![lightmode](https://github.com/ShaktiSampadSwain/RainbowFolderObsidian/blob/main/rainbowfolderLight.png)
-## ✨ Features
-
-- **Animated Gradient Folder Backgrounds:** Each top-level folder features a unique, slowly animating gradient background, creating a dynamic and visually engaging file explorer.
-    
-- **Customizable Color Palettes:** Easily define the light, base, and dark shades for each folder's gradient using CSS custom properties (`--folder-color-light`, `--folder-color`, `--folder-color-dark`).
-    
-- **Consistent Subfolder Styling:** Subfolders inherit the same animated gradient and color scheme based on their position within their parent, maintaining visual consistency across nested levels.
-    
-- **Bold Folder Names:** Folder titles are explicitly bolded for improved readability and distinction.
-    
-- **Subtle Gray Subfolder Titles:** Subfolder names are shaded gray, providing a clear visual hierarchy.
-    
-- **Clean Hover Effects:** Folders subtly lift and gain a shadow on hover, offering clear interactive feedback without distracting background changes or text blurring.
-    
-- **File Name Highlighting:** Files display a gentle background highlight when hovered, making them easy to identify.
-    
-- **No Text Shadow:** Text shadows have been removed for a cleaner, sharper text appearance.
-    
-
-## 🚀 Installation
-
-1. **Open Obsidian:** Launch your Obsidian application.
-    
-2. **Go to Settings:** Click the gear icon (Settings) in the bottom-left corner.
-    
-3. **Navigate to Appearance:** In the settings sidebar, click on "Appearance."
-    
-4. **Enable CSS Snippets:** Scroll down to the "CSS snippets" section. If it's not already enabled, toggle it on.
-    
-5. **Open Snippets Folder:** Click the folder icon next to "CSS snippets" to open the `snippets` folder in your vault.
-    
-6. **Create a New File:** Inside this `snippets` folder, create a new `.css` file (e.g., `enhanced-folders.css`).
-    
-7. **Paste the Code:** Copy the entire CSS code provided below and paste it into this new `.css` file. Save the file.
-    
-8. **Enable the Snippet:** Go back to Obsidian's Appearance settings. Under "CSS snippets," you should now see your new snippet file. Toggle it on.
-    
-
-Your file explorer should now display the enhanced styling!
-
-## 📋 The Code for Animated
-
-```css
-/* Base folder style with animated gradient background */
+Obsidian CSS Snippets: Interactive UI EnhancementsThis repository contains a collection of CSS snippets designed to enhance the visual appeal and interactivity of your Obsidian vault. From dynamic folder styling to animated calendar dates, these snippets aim to create a more engaging and personalized note-taking experience.🚀 FeaturesThis repository includes the following distinct CSS snippets:📁 Enhanced Folder & File StylingThis snippet transforms your Obsidian file explorer with vibrant backgrounds and clear visual cues. It offers two main variants:Animated Gradient Folder Backgrounds: Top-level folders feature unique, slowly animating gradient backgrounds for a dynamic file explorer.Solid Gradient Folder Backgrounds: Top-level folders display fixed, non-animating gradient backgrounds, offering a more subtle but still colorful appearance.Both variants share these common features:Customizable Color Palettes: Easily define light, base, and dark shades for each folder's gradient using CSS custom properties.Consistent Subfolder Styling: Subfolders inherit the same color scheme (or are transparent in the solid variant) based on their parent, maintaining visual consistency.Bold Folder Names: Folder titles are explicitly bolded for improved readability.Subtle Gray Subfolder Titles: Subfolder names are shaded gray, providing a clear visual hierarchy.Clean Hover Effects: Folders subtly lift and gain a shadow on hover, offering clear interactive feedback.File Name Highlighting: Files display a gentle background highlight when hovered, making them easy to identify.No Text Shadow: Text shadows have been removed for a cleaner, sharper text appearance.📅 Interactive Calendar AnimationsThis snippet adds subtle "lift" and "pulse" animations to dates and their associated note indicators (dots) within the Obsidian Calendar plugin (Liam Cain's plugin).Date Lift Effect: When you hover over any date in the calendar, the entire date cell gently lifts up and casts a subtle shadow, creating a three-dimensional pop-out effect.Dynamic Dot Pulse Animation: For dates with multiple note indicators (dots), hovering over the date triggers a "loading screen" or "wave" animation where the filled dots expand and contract in quick succession. The hollow dot (if present) remains static.💡 InstallationTo use these snippets in your Obsidian vault:Open Obsidian.Go to Settings (the gear icon in the bottom-left corner).Navigate to Appearance in the sidebar.Scroll down to the CSS snippets section. If it's not already enabled, toggle it on.Click the folder icon next to "CSS snippets" to open the snippets folder in your vault.For each snippet you want to use:Create a new .css file inside this snippets folder (e.g., enhanced-folders-animated.css for the animated folder styling, enhanced-folders-solid.css for the solid folder styling, calendar-animations.css for the calendar animations).Copy the entire CSS code for that specific snippet (provided in the sections below) and paste it into its respective new .css file. Save the file.Go back to Obsidian's Appearance settings. Under "CSS snippets," you should now see your new snippet files listed. Toggle each one on that you wish to activate.Restart Obsidian for the changes to take full effect, especially for animations.🎨 Visual Examples (Folder & File Styling)These images demonstrate the "Enhanced Folder & File Styling" snippet in action (specifically the animated gradient variant):(Note: Calendar animations are dynamic and best experienced live in Obsidian.)📋 CSS Snippets📁 Enhanced Folder & File Styling Snippet (Animated Gradient)This snippet provides folders with a continuously animating gradient background./* Base folder style with animated gradient background */
 .nav-files-container > div > .nav-folder {
     background: linear-gradient(90deg, var(--folder-color-light), var(--folder-color), var(--folder-color-dark));
     background-size: 300% 300%;
@@ -201,11 +152,7 @@ Your file explorer should now display the enhanced styling!
 .nav-files-container .nav-folder-title:hover .nav-folder-title-content {
     background-color: transparent !important;
 }
-
-```
-## 📋 The Code for Solid Background
-```css
-/* Finalized Obsidian Folder & File Styling Snippet v11.0 */
+📁 Enhanced Folder & File Styling Snippet (Solid Gradient)This snippet provides folders with a static, non-animating gradient background./* Finalized Obsidian Folder & File Styling Snippet v11.0 */
 /* Top-level folders have fixed gradient backgrounds.
    Subfolders are transparent (no background).
    Maintains bold text, gray subfolder titles, and refined hover/highlight behaviors. */
@@ -344,126 +291,114 @@ Your file explorer should now display the enhanced styling!
 .theme-anupucin .nav-files-container .nav-folder-title .nav-folder-title-content {
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
-```
-## 💡 Code Explanation
+📅 Interactive Calendar Animations Snippet/* --- Calendar Day Lift Effect on Hover --- */
 
-This snippet primarily targets elements within Obsidian's file explorer (`.nav-files-container`) to apply custom styling.
+/* Base style for all calendar day elements */
+/* This targets the main date cell, including the Svelte-generated hash for high specificity. */
+div.day.svelte-q3wqg9 {
+    position: relative; /* Essential for z-index and box-shadow positioning */
+    /* Define transitions for smooth animation of transform, box-shadow, background, and color */
+    transition: 
+        transform 0.2s ease-out, /* Controls the lift and scale speed */
+        box-shadow 0.2s ease-out, /* Controls the shadow appearance speed */
+        background-color 0.1s ease-in, /* Preserves existing background color transition */
+        color 0.1s ease-in; /* Preserves existing text color transition */
+    z-index: 1; /* Default stacking order for non-hovered days */
+}
 
-### 1. Base Folder Styling (`.nav-files-container > div > .nav-folder`)
+/* Hover effect for all calendar day elements */
+/* When the mouse hovers over a day, it lifts, scales slightly, and gets a shadow */
+div.day.svelte-q3wqg9:hover {
+    transform: translateY(-5px) scale(1.02); /* Lifts the element up by 5px and scales it to 102% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth (adjust color/blur as needed) */
+    z-index: 10; /* Brings the hovered day to the front, preventing overlap issues with shadows */
+}
 
-This section defines the core appearance and behavior for all top-level folders.
+/* Reset z-index for non-hovered days */
+/* Ensures that days return to their normal stacking order when the mouse moves away */
+div.day.svelte-q3wqg9:not(:hover) {
+    z-index: 1; 
+}
 
-- `background: linear-gradient(...)`: Creates a gradient background for each folder. It uses three CSS custom properties (`--folder-color-light`, `--folder-color`, `--folder-color-dark`) to define the specific shades for each folder, which are set later by `nth-child` rules.
-    
-- `background-size: 300% 300%;`: Makes the gradient three times larger than the folder, allowing for a smooth, continuous animation as its position shifts.
-    
-- `animation: rainbow-gradient-shift 7s ease-in-out infinite;`: Applies the animation defined by `@keyframes rainbow-gradient-shift`.
-    
-    - `7s`: The duration of one complete animation cycle.
-        
-    - `ease-in-out`: Provides a smooth start and end to the animation.
-        
-    - `infinite`: Makes the animation loop continuously.
-        
-- `--nav-item-color`, `--nav-item-color-hover`, `--nav-collapse-icon-color`: Custom properties to define the text and icon colors, ensuring high contrast against the folder backgrounds.
-    
-- `border-radius: 10px;`: Rounds the corners of the folders.
-    
-- `padding: 5px 10px;`: Adds space around the folder content.
-    
-- `overflow: hidden;`: Ensures any content or effects stay within the rounded borders.
-    
-- `text-overflow: ellipsis; white-space: nowrap;`: Handles long folder names by truncating them with an ellipsis (...).
-    
-- `margin-bottom: 6px;`: Provides vertical spacing between folders.
-    
-- `transition: all 0.2s ease-in-out;`: Smooths transitions for properties like `transform` and `box-shadow` on hover.
-    
-- `filter: brightness(0.95);`: Slightly darkens the default appearance of the folder background.
-    
 
-### 2. Folder Title Boldness (`.nav-files-container > div > .nav-folder-title`)
+/* --- Dynamic Dot Pulse Animation --- */
 
-This rule ensures the main folder titles are bold.
+/* 1. Define the Keyframes Animation for a single dot pulse */
+/* This animation describes one cycle of a dot expanding and contracting */
+@keyframes dot-pulse {
+    0% {
+        transform: scale(1); /* Start at normal size */
+        opacity: 0.8; /* Start slightly transparent */
+    }
+    50% {
+        transform: scale(1.6); /* Expand to 160% of original size */
+        opacity: 1; /* Become fully opaque */
+    }
+    100% {
+        transform: scale(1); /* Return to normal size */
+        opacity: 0.8; /* Return to slightly transparent */
+    }
+}
 
-- `font-weight: bold !important;`: Makes the folder title text bold, using `!important` to override potential theme conflicts.
+/* 2. Apply the animation to the FILLED dots when the PARENT DAY is hovered */
+/* This targets only the 'filled' dots within the 'dot-container' when the main day is hovered. */
+/* The Svelte hash (`.svelte-1widvzq`) is crucial for targeting these specific SVG elements. */
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq {
+    /* Apply the defined 'dot-pulse' animation */
+    animation: dot-pulse 1s infinite ease-in-out; /* 1s duration, repeats infinitely, smooth timing */
     
-- `background-color: transparent !important;`: Ensures no background color is applied directly to the title itself, preventing unwanted highlights.
-    
+    /* Ensure the dot is visible and scaling from its center */
+    opacity: 0.8; 
+    transform-origin: center center;
+}
 
-### 3. Hover Effect (`.nav-files-container > div > .nav-folder:hover`)
+/* 3. Stagger the animation using :nth-child() */
+/* This creates the "quick succession" or "wave" effect for multiple dots. */
+/* Adjust 'animation-delay' values to control the speed of the wave. */
+/* Extended to cover up to 10 dots for broader compatibility. */
 
-This section defines the visual feedback when you hover over any folder.
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(1) {
+    animation-delay: 0s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(2) {
+    animation-delay: 0.10s; /* Slightly faster delay for more dots */
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(3) {
+    animation-delay: 0.20s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(4) {
+    animation-delay: 0.30s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(5) {
+    animation-delay: 0.40s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(6) {
+    animation-delay: 0.50s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(7) {
+    animation-delay: 0.60s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(8) {
+    animation-delay: 0.70s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(9) {
+    animation-delay: 0.80s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(10) {
+    animation-delay: 0.90s;
+}
 
-- `filter: brightness(1);`: On hover, the folder's brightness returns to normal (from the `0.95` default), making it slightly brighter.
-    
-- `transform: translateY(-3px);`: Lifts the folder slightly upwards, creating a "pop-out" effect.
-    
-- `box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);`: Adds a subtle shadow beneath the lifted folder, enhancing the sense of depth.
-    
 
-### 4. Folder-Specific Color Variables (`.nav-files-container > div > .nav-folder:nth-child(...)`)
+/* Optional: Ensure dots are not animating by default (only on hover) */
+/* This rule explicitly ensures no animation is applied when the day is not hovered. */
+.dot-container svg.dot.filled.svelte-1widvzq {
+    animation: none; 
+}
 
-These rules use the `nth-child` pseudo-class to assign a unique set of `light`, `base`, and `dark` colors (via custom properties) to every 11th folder in the list. This creates the rainbow-like, distinct color scheme for your top-level folders.
+/* Note on Hollow Dots: */
+/* The `hollow` dot (if present, usually the last one) is excluded from the `dot-pulse`
+   animation by targeting `svg.dot.filled`. If you wish to animate the hollow dot
+   differently, you would create a separate `@keyframes` and apply it to 
+   `div.day.svelte-q3wqg9:hover .dot-container svg.hollow.task.svelte-1widvzq`. */
 
-- `--folder-color`: The main color of the folder.
-    
-- `--folder-color-light`: A lighter shade of the main color.
-    
-- `--folder-color-dark`: A darker shade of the main color.
-    
-- `nth-child(11n + X)`: This CSS selector pattern cycles through 11 different styles. `11n + 2` applies to the 2nd, 13th, 24th, etc., folder. This ensures a repeating pattern of distinct colors.
-    
-
-### 5. Gradient Animation Keyframes (`@keyframes rainbow-gradient-shift`)
-
-This defines how the gradient background animates.
-
-- `0% { background-position: 0% 50%; }`: Starts the gradient at the left edge.
-    
-- `50% { background-position: 100% 50%; }`: Moves the gradient to the right edge at the halfway point.
-    
-- `100% { background-position: 0% 50%; }`: Moves the gradient back to the left edge, completing the cycle. The `infinite alternate` in the `animation` property (defined in the base folder style) makes it smoothly reverse direction, creating a continuous ebb and flow.
-    
-
-### 6. Subfolder Title Gray Shading (`.nav-files-container .nav-folder-children .nav-folder-title .nav-folder-title-content`)
-
-This section specifically targets subfolder titles to make them appear gray, creating a visual hierarchy.
-
-- `color: rgba(0, 0, 0, 0.8) !important;`: Sets the text color to a semi-transparent black, resulting in a gray appearance.
-    
-- `text-shadow: none !important;`: Ensures no text shadow is applied to subfolder titles for a cleaner look.
-    
-
-### 7. File Name Highlighting (`.nav-files-container .nav-file:hover .nav-file-title-content`)
-
-This rule provides visual feedback when hovering over individual files.
-
-- `background-color: rgba(0, 0, 0, 0.1);`: Applies a subtle, semi-transparent black background highlight to the file name.
-    
-- `border-radius: 4px;`: Rounds the corners of the highlight.
-    
-- `padding: 0 4px; margin: 0 -4px;`: Adjusts the spacing to make the highlight extend slightly beyond the text without affecting layout.
-    
-
-### 8. Compatibility Overrides (e.g., `.theme-anupucin ...`)
-
-These sections are included to address potential conflicts with specific Obsidian themes, such as "AnuPpuccin." They ensure that the desired font-weight and font-family are applied consistently, overriding theme defaults if necessary.
-
-## ⚙️ Customization
-
-- **Folder Colors:** Modify the `rgb()` values for `--folder-color`, `--folder-color-light`, and `--folder-color-dark` in each `nth-child` block to change the color palette of your folders.
-    
-- **Animation Speed:** Adjust the `7s` value in `animation: rainbow-gradient-shift 7s ease-in-out infinite;` to make the gradient animation faster or slower.
-    
-- **Hover Effect Intensity:**
-    
-    - Change `transform: translateY(-3px);` to a different pixel value for more or less lift.
-        
-    - Adjust `box-shadow` values (`0 6px 15px rgba(0, 0, 0, 0.1)`) for a softer or stronger shadow.
-        
-    - Modify `filter: brightness(1);` on hover to make the folder brighter or darker.
-        
-- **Subfolder Gray Shade:** Change the `rgba(0, 0, 0, 0.8)` value in the `.nav-files-container .nav-folder-children .nav-folder-title .nav-folder-title-content` rule to make subfolder text lighter or darker.
-    
-- **File Highlight:** Adjust `rgba(0, 0, 0, 0.1)` in `.nav-files-container .nav-file:hover .nav-file-title-content` for a more or less opaque file highlight.
+⚙️ Customization📁 Enhanced Folder & File Styling CustomizationFolder Colors: Modify the rgb() values for --folder-color, --folder-color-light, and --folder-color-dark in each nth-child block to change the color palette of your folders.Animation Speed (Animated Gradient): Adjust the 7s value in animation: rainbow-gradient-shift 7s ease-in-out infinite; to make the gradient animation faster or slower.Hover Effect Intensity:Change transform: translateY(-3px); to a different pixel value for more or less lift.Adjust box-shadow values (0 6px 15px rgba(0, 0, 0, 0.1)) for a softer or stronger shadow.Modify filter: brightness(1); on hover to make the folder brighter or darker.Subfolder Gray Shade: Change the rgba(0, 0, 0, 0.8) value in the .nav-files-container .nav-folder-children .nav-folder-title .nav-folder-title-content rule to make subfolder text lighter or darker.File Highlight: Adjust rgba(0, 0, 0, 0.1) in .nav-files-container .nav-file:hover .nav-file-title-content for a more or less opaque file highlight.📅 Interactive Calendar Animations CustomizationDate Lift Effect (div.day.svelte-q3wqg9:hover):transform: translateY(-5px) scale(1.02);:translateY(-5px): Controls how high the date lifts. Increase/decrease the px value.scale(1.02): Controls how much the date slightly enlarges. Increase/decrease the value (e.g., 1.05 for a bigger effect).box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);:0 8px 16px: Adjust horizontal offset, vertical offset, and blur radius of the shadow.rgba(0, 0, 0, 0.3): Change the color (first three numbers for RGB) and opacity (last number, 0 to 1) of the shadow.transition duration: Adjust 0.2s for transform and box-shadow to make the lift faster or slower.Dot Pulse Animation (@keyframes dot-pulse and animation properties):@keyframes dot-pulse:transform: scale(1.6); (at 50%): Controls how large the dot gets during its pulse.opacity: 0.8; (at 0% and 100%): Controls the base transparency of the dots when not at their peak.animation: dot-pulse 1s infinite ease-in-out;:1s: The duration of one complete pulse cycle for a single dot. Make it shorter for a faster pulse, longer for a slower one.ease-in-out: You can experiment with other timing functions like linear, ease, ease-in, ease-out for different feels.animation-delay (:nth-child rules):0.10s: This value determines the delay between each dot's pulse. A smaller value (e.g., 0.05s) will make the wave faster and tighter; a larger value will make it slower and more spread out.The provided snippet now includes rules for up to 10 dots. If you consistently have more than 10 dots, you would need to add more :nth-child rules. For a truly dynamic number of dots beyond a reasonable CSS limit, a small JavaScript snippet would be required, but this goes beyond a pure CSS solution.
