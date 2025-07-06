@@ -1,0 +1,109 @@
+/* --- Calendar Day Lift Effect on Hover --- */
+
+/* Base style for all calendar day elements */
+/* This targets the main date cell, including the Svelte-generated hash for high specificity. */
+div.day.svelte-q3wqg9 {
+    position: relative; /* Essential for z-index and box-shadow positioning */
+    /* Define transitions for smooth animation of transform, box-shadow, background, and color */
+    transition: 
+        transform 0.2s ease-out, /* Controls the lift and scale speed */
+        box-shadow 0.2s ease-out, /* Controls the shadow appearance speed */
+        background-color 0.1s ease-in, /* Preserves existing background color transition */
+        color 0.1s ease-in; /* Preserves existing text color transition */
+    z-index: 1; /* Default stacking order for non-hovered days */
+}
+
+/* Hover effect for all calendar day elements */
+/* When the mouse hovers over a day, it lifts, scales slightly, and gets a shadow */
+div.day.svelte-q3wqg9:hover {
+    transform: translateY(-5px) scale(1.02); /* Lifts the element up by 5px and scales it to 102% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a shadow for depth (adjust color/blur as needed) */
+    z-index: 10; /* Brings the hovered day to the front, preventing overlap issues with shadows */
+}
+
+/* Reset z-index for non-hovered days */
+/* Ensures that days return to their normal stacking order when the mouse moves away */
+div.day.svelte-q3wqg9:not(:hover) {
+    z-index: 1; 
+}
+
+
+/* --- Dynamic Dot Pulse Animation --- */
+
+/* 1. Define the Keyframes Animation for a single dot pulse */
+/* This animation describes one cycle of a dot expanding and contracting */
+@keyframes dot-pulse {
+    0% {
+        transform: scale(1); /* Start at normal size */
+        opacity: 0.8; /* Start slightly transparent */
+    }
+    50% {
+        transform: scale(1.6); /* Expand to 160% of original size */
+        opacity: 1; /* Become fully opaque */
+    }
+    100% {
+        transform: scale(1); /* Return to normal size */
+        opacity: 0.8; /* Return to slightly transparent */
+    }
+}
+
+/* 2. Apply the animation to the FILLED dots when the PARENT DAY is hovered */
+/* This targets only the 'filled' dots within the 'dot-container' when the main day is hovered. */
+/* The Svelte hash (`.svelte-1widvzq`) is crucial for targeting these specific SVG elements. */
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq {
+    /* Apply the defined 'dot-pulse' animation */
+    animation: dot-pulse 1s infinite ease-in-out; /* 1s duration, repeats infinitely, smooth timing */
+    
+    /* Ensure the dot is visible and scaling from its center */
+    opacity: 0.8; 
+    transform-origin: center center;
+}
+
+/* 3. Stagger the animation using :nth-child() */
+/* This creates the "quick succession" or "wave" effect for multiple dots. */
+/* Adjust 'animation-delay' values to control the speed of the wave. */
+/* Extended to cover up to 10 dots for broader compatibility. */
+
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(1) {
+    animation-delay: 0s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(2) {
+    animation-delay: 0.10s; /* Slightly faster delay for more dots */
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(3) {
+    animation-delay: 0.20s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(4) {
+    animation-delay: 0.30s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(5) {
+    animation-delay: 0.40s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(6) {
+    animation-delay: 0.50s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(7) {
+    animation-delay: 0.60s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(8) {
+    animation-delay: 0.70s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(9) {
+    animation-delay: 0.80s;
+}
+div.day.svelte-q3wqg9:hover .dot-container svg.dot.filled.svelte-1widvzq:nth-child(10) {
+    animation-delay: 0.90s;
+}
+
+
+/* Optional: Ensure dots are not animating by default (only on hover) */
+/* This rule explicitly ensures no animation is applied when the day is not hovered. */
+.dot-container svg.dot.filled.svelte-1widvzq {
+    animation: none; 
+}
+
+/* Note on Hollow Dots: */
+/* The `hollow` dot (if present, usually the last one) is excluded from the `dot-pulse`
+   animation by targeting `svg.dot.filled`. If you wish to animate the hollow dot
+   differently, you would create a separate `@keyframes` and apply it to 
+   `div.day.svelte-q3wqg9:hover .dot-container svg.hollow.task.svelte-1widvzq`. */
