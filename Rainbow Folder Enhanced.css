@@ -1,0 +1,273 @@
+/* @settings
+
+name: Rainbow Folder Enhanced
+
+id: rainbow-folder-enhanced
+
+settings:
+    -
+        id: rainbow-folder-animation
+        title: Enable Gradient Animation
+        description: Enables smooth gradient animations for folders. note - turning on animations can be cpu intensive.
+        type: class-toggle
+        default: false
+    -
+        id: rainbow-folder-hover
+        title: Enable Hover Effects
+        description: Enables lift and shadow effects when hovering over folders.
+        type: class-toggle
+        default: true
+    -
+        id: rainbow-folder-styling
+        title: Styling Options
+        type: heading
+        level: 1
+        collapsed: true
+
+    -
+        id: rainbow-folder-font-weight
+        title: Folder Name Font Weight
+        description: Controls the font weight of folder names.
+        type: variable-number-slider
+        default: 400
+        min: 100
+        max: 900
+        step: 100
+    -
+        id: rainbow-folder-lift
+        title: Hover Lift Distance
+        description: How far folders lift when hovered (in pixels).
+        type: variable-number-slider
+        default: 2
+        min: 0
+        max: 10
+        format: px
+        step: 1
+    -
+        id: rainbow-folder-border-radius
+        title: Border Radius
+        description: Controls the roundness of folder corners.
+        type: variable-number-slider
+        default: 10
+        min: 0
+        max: 20
+        format: px
+        step: 1
+    -
+        id: rainbow-folder-animation-speed
+        title: Animation Speed
+        description: Controls how fast the gradient animation moves (in seconds).
+        type: variable-number-slider
+        default: 7
+        min: 2
+        max: 15
+        format: s
+        step: 1
+    -
+        id: rainbow-folder-vertical-spacing
+        title: Vertical Space Between Folders
+        description: Controls the vertical space below each folder (in pixels).
+        type: variable-number-slider
+        default: 6
+        min: 0
+        max: 20
+        format: px
+        step: 1
+    -
+        id: rainbow-folder-vertical-padding-inside
+        title: Vertical Padding Inside Folders
+        description: Controls the top and bottom padding within folders (in pixels).
+        type: variable-number-slider
+        default: 5
+        min: 1
+        max: 20
+        format: px
+        step: 1
+
+*/
+
+/* CSS Variables - Define these at root level so they can be controlled by settings */
+body {
+    --rainbow-folder-font-weight: 400;
+    --rainbow-folder-lift: 2px;
+    --rainbow-folder-border-radius: 10px;
+    --rainbow-folder-animation-speed: 7s;
+    --rainbow-folder-vertical-spacing: 6px;
+    --rainbow-folder-vertical-padding-inside: 5px;
+}
+
+/* Base folder styling (applies to all .nav-folder elements) */
+.nav-files-container .nav-folder {
+    --nav-item-color: black;
+    --nav-item-color-hover: black;
+    --nav-collapse-icon-color: black;
+    
+    position: relative;
+    border-radius: var(--rainbow-folder-border-radius);
+    padding: var(--rainbow-folder-vertical-padding-inside) 10px; /* Use variable for vertical padding, fixed horizontal */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: var(--rainbow-folder-vertical-spacing); /* Use variable for vertical spacing */
+    border: none;
+    box-shadow: none;
+    opacity: 0.95;
+    
+    /* Performance optimization */
+    contain: layout style;
+}
+
+/* Folder title bold */
+.nav-files-container .nav-folder-title {
+    font-weight: var(--rainbow-folder-font-weight) !important;
+    background-color: transparent !important;
+}
+
+/* Optimized hover effect - only transform when needed */
+body.rainbow-folder-hover .nav-files-container .nav-folder {
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+body.rainbow-folder-hover .nav-files-container .nav-folder:hover {
+    transform: translateY(calc(-1 * var(--rainbow-folder-lift)));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Static gradient backgrounds for TOP-LEVEL folders */
+.nav-files-container > div > .nav-folder:nth-child(11n + 2) {
+    background: linear-gradient(90deg, rgb(255, 180, 200), rgb(243, 139, 168), rgb(220, 100, 140));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 3) {
+    background: linear-gradient(90deg, rgb(255, 190, 200), rgb(235, 160, 172), rgb(210, 120, 140));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 4) {
+    background: linear-gradient(90deg, rgb(255, 210, 170), rgb(250, 179, 135), rgb(230, 140, 100));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 5) {
+    background: linear-gradient(90deg, rgb(255, 245, 210), rgb(249, 226, 175), rgb(220, 190, 130));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 6) {
+    background: linear-gradient(90deg, rgb(200, 250, 190), rgb(166, 227, 161), rgb(130, 190, 130));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 7) {
+    background: linear-gradient(90deg, rgb(180, 250, 240), rgb(148, 226, 213), rgb(110, 190, 180));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 8) {
+    background: linear-gradient(90deg, rgb(170, 240, 250), rgb(137, 220, 235), rgb(100, 180, 200));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 9) {
+    background: linear-gradient(90deg, rgb(150, 220, 250), rgb(116, 199, 236), rgb(80, 160, 200));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 10) {
+    background: linear-gradient(90deg, rgb(170, 200, 255), rgb(135, 176, 249), rgb(100, 140, 210));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 11) {
+    background: linear-gradient(90deg, rgb(210, 220, 255), rgb(180, 190, 254), rgb(140, 150, 220));
+}
+
+.nav-files-container > div > .nav-folder:nth-child(11n + 12) {
+    background: linear-gradient(90deg, rgb(230, 200, 255), rgb(203, 166, 247), rgb(160, 120, 210));
+}
+
+/* Optimized animated gradient backgrounds - only when animation is enabled */
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 2),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 3),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 4),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 5),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 6),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 7),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 8),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 9),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 10),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 11),
+body.rainbow-folder-animation .nav-files-container > div > .nav-folder:nth-child(11n + 12) {
+    background-size: 300% 300%;
+    animation: rainbow-gradient-shift var(--rainbow-folder-animation-speed) ease-in-out infinite;
+    /* Performance optimization for animations */
+    contain: layout style;
+}
+
+/* Gradient animation keyframes - optimized for performance */
+@keyframes rainbow-gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Bold folder names (applies to text within any .nav-folder) */
+.nav-files-container .nav-folder-title .nav-file-title-content,
+.nav-files-container .nav-folder-title .nav-folder-title-content {
+    font-weight: var(--rainbow-folder-font-weight) !important;
+    position: relative;
+    z-index: 2;
+    color: var(--nav-item-color) !important;
+    text-shadow: none !important;
+    background-color: transparent !important;
+    /* Prevent text blur on hover */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subfolder Title Gray Shading */
+.nav-files-container .nav-folder-children .nav-folder-title .nav-folder-title-content {
+    color: rgba(0, 0, 0, 0.8) !important;
+    text-shadow: none !important;
+    /* Prevent text blur on hover */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subfolder opacity */
+.nav-files-container .nav-folder-children .nav-folder {
+    opacity: 0.8 !important;
+}
+
+/* Ensure collapse icon is above gradient (applies to icons within any .nav-folder) */
+.nav-files-container .nav-folder-title .nav-folder-collapse-icon {
+    position: relative;
+    z-index: 2;
+    color: var(--nav-collapse-icon-color) !important;
+}
+
+/* --- CRITICAL FIX: Make Subfolders Transparent --- */
+.nav-files-container .nav-folder-children .nav-folder {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    opacity: 0.8 !important;
+    /* Remove unnecessary optimizations for subfolders */
+    contain: none;
+}
+
+/* File hover effect - removed to prevent text effects */
+.nav-files-container .nav-file:hover .nav-file-title-content {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 0 4px;
+    margin: 0 -4px;
+    transition: background-color 0.1s ease-out;
+}
+
+/* Ensure folder names do NOT get any hover effects */
+.nav-files-container .nav-folder-title:hover .nav-folder-title-content {
+    background-color: transparent !important;
+    text-shadow: none !important;
+    transform: none !important;
+}
