@@ -103,12 +103,12 @@ body {
     --nav-collapse-icon-color: black;
     
     position: relative;
-    border-radius: var(--rainbow-folder-border-radius);
-    padding: var(--rainbow-folder-vertical-padding-inside) 10px; /* Use variable for vertical padding, fixed horizontal */
+    border-radius: var(--rainbow-folder-border-radius) !important; /* Added !important */
+    padding: var(--rainbow-folder-vertical-padding-inside) 10px !important; /* Added !important */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-bottom: var(--rainbow-folder-vertical-spacing); /* Use variable for vertical spacing */
+    margin-bottom: var(--rainbow-folder-vertical-spacing) !important; /* Added !important */
     border: none;
     box-shadow: none;
     opacity: 0.95;
