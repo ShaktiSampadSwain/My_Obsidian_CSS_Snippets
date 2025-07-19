@@ -1,7 +1,11 @@
 # Obsidian CSS Snippets Collection
 
 A collection of beautiful and functional CSS snippets to enhance your Obsidian experience with animations, colors, and improved visual effects.
+## ☕ Support Me
 
+Did you find this Snippet useful? A little support goes a long way. Thank you!
+
+<a href="coff.ee/Shakti_02" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 ## 📦 What's Included
 
 ### 🗂️ Rainbow Folder Enhanced
