@@ -9,12 +9,6 @@ settings:
         type: heading
         level: 1
     -
-        id: performance-mode
-        title: Enable Performance Mode
-        description: Disables the blur effect to reduce lag. Backgrounds remain semi-transparent.
-        type: class-toggle
-        default: false
-    -
         id: rainbow-bg-enabled
         title: Enable Folder Background
         description: Turns the custom folder backgrounds on or off.
@@ -37,7 +31,7 @@ settings:
         title: Style & Color Options
         type: heading
         level: 1
-        collapsed: true
+        collapsed: false
     -
         id: folder-text-color-light
         title: Text Color (Light Mode)
@@ -167,8 +161,8 @@ body.rainbow-bg-enabled.full-opacity-enabled {
     --final-bg-opacity: 1;
 }
 
-/* Add blur and border only for Glass Effect, and only when Performance Mode is OFF */
-body.rainbow-bg-enabled:not(.full-opacity-enabled):not(.performance-mode) .nav-files-container > div > .nav-folder {
+/* Add blur and border only for Glass Effect */
+body.rainbow-bg-enabled:not(.full-opacity-enabled) .nav-files-container > div > .nav-folder {
     -webkit-backdrop-filter: blur(var(--glass-folder-blur));
     backdrop-filter: blur(var(--glass-folder-blur));
     border-color: rgba(255, 255, 255, 0.15) !important;
